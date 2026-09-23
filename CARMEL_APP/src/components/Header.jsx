@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
+import logo from '../img/logo_carmel.jpeg';
 
 export default function Header() {
   const { usuario, logout, esAdmin } = useAuth();
@@ -23,10 +24,21 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-30 bg-forest-900 text-cream">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-4 md:gap-6">
-        <Link to="/" className="flex shrink-0 items-center gap-2">
+        {/* <Link to="/" className="flex shrink-0 items-center gap-2">
           <span className="flex h-9 w-9 items-center justify-center rounded-full bg-honey-500 text-sm font-display font-semibold text-forest-950">
             C
           </span>
+          <span className="font-display text-xl font-semibold leading-none">
+            CARMEL
+          </span>
+        </Link> */}
+
+        <Link to="/" className="flex shrink-0 items-center gap-2">
+          <img
+            src={logo}
+            alt="Logo Carmel"
+            className="h-9 w-9 object-contain"
+          />
           <span className="font-display text-xl font-semibold leading-none">
             CARMEL
           </span>
